@@ -15,4 +15,8 @@ class SubGameViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    @IBAction func subButtonPressed(_ sender: UIButton) {
+    
+    
+    }
 }
