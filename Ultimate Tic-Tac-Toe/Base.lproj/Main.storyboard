@@ -22,7 +22,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="2-Player"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="two_player" id="vrO-xr-qmD"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="TwoPlayer" id="vrO-xr-qmD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7JM-W8-bKZ">
@@ -30,7 +30,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="1-Player"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="one_player" id="T7e-up-NMb"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="OnePlayer" id="T7e-up-NMb"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ihv-wF-7OC">
@@ -138,7 +138,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <segue destination="ufZ-9y-zmz" kind="show" id="Bnb-bD-Qjb"/>
+                        <segue destination="ufZ-9y-zmz" kind="show" identifier="SubGame" id="Bnb-bD-Qjb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -162,6 +162,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vrO-xr-qmD"/>
+        <segue reference="T7e-up-NMb"/>
     </inferredMetricsTieBreakers>
 </document>
