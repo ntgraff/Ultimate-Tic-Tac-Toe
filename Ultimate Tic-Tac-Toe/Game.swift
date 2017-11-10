@@ -9,7 +9,7 @@
 import Foundation
 
 class Game {
-	private var board = [ [0, 0, 0], [0, 0, 0], [0, 0, 0] ]
+	public var board = [ [0, 0, 0], [0, 0, 0], [0, 0, 0] ]
 	enum Plr {
 		case x
 		case o
