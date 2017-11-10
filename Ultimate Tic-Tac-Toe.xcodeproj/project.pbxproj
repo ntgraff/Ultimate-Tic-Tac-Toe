@@ -61,11 +61,11 @@
 				A5B9F3961FB5EE1300D655B1 /* AppDelegate.swift */,
 				A5B9F3981FB5EE1300D655B1 /* ViewController.swift */,
 				A5B9F3A81FB5F24400D655B1 /* MainMenuViewController.swift */,
+				A5B9F3AA1FB5F34A00D655B1 /* SubGameViewController.swift */,
 				A5B9F39A1FB5EE1300D655B1 /* Main.storyboard */,
 				A5B9F39D1FB5EE1300D655B1 /* Assets.xcassets */,
 				A5B9F39F1FB5EE1300D655B1 /* LaunchScreen.storyboard */,
 				A5B9F3A21FB5EE1300D655B1 /* Info.plist */,
-				A5B9F3AA1FB5F34A00D655B1 /* SubGameViewController.swift */,
 			);
 			path = "Ultimate Tic-Tac-Toe";
 			sourceTree = "<group>";

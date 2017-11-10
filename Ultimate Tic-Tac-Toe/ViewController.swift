@@ -9,13 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+	var Players = Int()
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 	}
 	@IBAction func ButtonPressed(_ sender: UIButton) {
-	
+		performSegue(withIdentifier: "SubGame", sender: self)
 	}
 }
 
