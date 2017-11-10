@@ -61,6 +61,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="board" translatesAutoresizingMaskIntoConstraints="NO" id="NGX-FX-26i">
+                                <rect key="frame" x="30" y="199" width="316" height="305"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OdX-wj-C2i">
                                 <rect key="frame" x="64" y="228" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
@@ -143,7 +147,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9" y="140"/>
+            <point key="canvasLocation" x="8.8000000000000007" y="139.880059970015"/>
         </scene>
         <!--Sub Game View Controller-->
         <scene sceneID="cey-ZG-gM3">
@@ -208,6 +212,9 @@
             <point key="canvasLocation" x="700" y="140"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="board" width="360" height="360"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="T7e-up-NMb"/>
     </inferredMetricsTieBreakers>
