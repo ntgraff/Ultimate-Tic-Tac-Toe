@@ -22,4 +22,15 @@ class SubGameViewController: UIViewController {
 		
 		sender.setImage(img, for: UIControlState.normal)
     }
+    @IBAction func backToMainGame(_ sender: UIButton) {
+    
+    
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "BackToMainGame" {
+            let mgvc = segue.destination as! ViewController
+            mgvc.Turn = Turn
+        }
+    }
+
 }
