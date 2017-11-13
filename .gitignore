@@ -1,2 +1,5 @@
-project.pbxproj
 *.pbxuser
+!default.pbxuser
+xcuserdata
+*.ipa
+*.xcodeproj
