@@ -233,6 +233,16 @@
                                     <action selector="subButtonPressed:" destination="ufZ-9y-zmz" eventType="touchUpInside" id="gaY-gH-DBy"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vv-lV-GBV">
+                                <rect key="frame" x="16" y="597" width="91" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Zoom Out"/>
+                                <connections>
+                                    <action selector="backToMainGame:" destination="ufZ-9y-zmz" eventType="touchUpInside" id="tGF-jQ-b4i"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="BackToMainGame" id="gOr-r3-Ojf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="ctb-iD-Su7"/>
@@ -247,6 +257,6 @@
         <image name="board" width="360" height="360"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="T7e-up-NMb"/>
+        <segue reference="gOr-r3-Ojf"/>
     </inferredMetricsTieBreakers>
 </document>
