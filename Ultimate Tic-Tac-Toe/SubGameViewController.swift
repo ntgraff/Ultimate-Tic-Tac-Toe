@@ -17,7 +17,9 @@ class SubGameViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func subButtonPressed(_ sender: UIButton) {
-    
-    
+		SubGame.setAtPoint(x: 0, y: 0, type: .o)
+		let img = SubGame.typeAtPoint(x: 0, y: 0).img
+		
+		sender.setImage(img, for: UIControlState.normal)
     }
 }
