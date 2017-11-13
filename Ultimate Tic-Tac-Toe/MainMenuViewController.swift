@@ -9,6 +9,7 @@
 import UIKit
 
 class MainMenuViewController: UIViewController {
+    var Turn = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,9 +20,11 @@ class MainMenuViewController: UIViewController {
 		if (segue.identifier == "OnePlayer") {
 			let destVC = segue.destination as! ViewController
 			destVC.Players = 0;
+            destVC.Turn = Turn
 		} else if (segue.identifier == "TwoPlayer") {
 			let destVC = segue.destination as! ViewController
 			destVC.Players = 1;
+            destVC.Turn = Turn
 		}
 	}
 }

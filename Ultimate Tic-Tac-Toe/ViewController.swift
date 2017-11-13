@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 	var Players = Int()
-    var Turn = 0
+    var Turn = Int()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
