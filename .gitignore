@@ -2,4 +2,4 @@
 !default.pbxuser
 xcuserdata
 *.ipa
-*.xcodeproj
+*.xcodeproj/
