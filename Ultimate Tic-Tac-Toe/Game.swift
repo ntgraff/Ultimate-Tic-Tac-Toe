@@ -38,6 +38,8 @@ class Game {
 		case true:
 			setAtPoint(x: x, y: y, type: .o)
 		}
+		
+		player = !player
 	}
 	
 	public func setAtPoint(x:Int, y:Int, type:Plr) {
