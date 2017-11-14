@@ -32,14 +32,16 @@ class Game {
 	}
 	
 	public func turn(x: Int, y: Int) {
-		switch player {
-		case false:
-			setAtPoint(x: x, y: y, type: .x)
-		case true:
-			setAtPoint(x: x, y: y, type: .o)
-		}
+		if (board[x][y] == .none) {
+			switch player {
+			case false:
+				setAtPoint(x: x, y: y, type: .x)
+			case true:
+				setAtPoint(x: x, y: y, type: .o)
+			}
 		
-		player = !player
+			player = !player
+		}
 	}
 	
 	public func setAtPoint(x:Int, y:Int, type:Plr) {
