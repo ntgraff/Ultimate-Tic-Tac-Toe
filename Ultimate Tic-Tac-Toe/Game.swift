@@ -16,13 +16,13 @@ class Game {
 		case x = 1
 		case o = 2
 	}
-	private var board: [[Int]] = [ [0, 0, 0], [0, 0, 0], [0, 0, 0] ]
+	private var board: [[Plr]] = [ [Plr.none, Plr.none, Plr.none], [Plr.none, Plr.none, Plr.none], [Plr.none, Plr.none, Plr.none] ]
 	
 	
-	public func typeAtPoint(x:Int, y:Int) -> (type:Int, img:UIImage) {
+	public func typeAtPoint(x:Int, y:Int) -> (type:Plr, img:UIImage) {
 		var img: UIImage
 		switch board[x][y] {
-		case Int(Float((Plr.x).rawValue)):
+		case Plr.x:
 			img = #imageLiteral(resourceName: "X")
 		default:
 			img = #imageLiteral(resourceName: "notO")
@@ -32,6 +32,6 @@ class Game {
 	}
 	
 	public func setAtPoint(x:Int, y:Int, type:Plr) {
-		board[x][y] = Int(Float((type).rawValue))
+		board[x][y] = type
 	}
 }

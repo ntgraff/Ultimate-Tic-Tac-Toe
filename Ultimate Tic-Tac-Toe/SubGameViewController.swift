@@ -10,6 +10,7 @@ import UIKit
 
 class SubGameViewController: UIViewController {
 	var SubGame = Game()
+	var Turn = Int()
 	
     override func viewDidLoad() {
         super.viewDidLoad()

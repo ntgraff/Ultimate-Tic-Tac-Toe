@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 	var Players = Int()
 	var GameArray = [Game]()
-	
+	var Turn = Int()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
