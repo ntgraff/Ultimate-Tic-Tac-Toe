@@ -4,3 +4,4 @@ xcuserdata
 *.ipa
 *.xcodeproj/
 .DS_Store
+*.xcuserstate
