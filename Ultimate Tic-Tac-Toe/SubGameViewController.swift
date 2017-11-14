@@ -10,7 +10,6 @@ import UIKit
 
 class SubGameViewController: UIViewController {
 	var SubGame = Game()
-	var Turn = Int()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +26,5 @@ class SubGameViewController: UIViewController {
     
     
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "BackToMainGame" {
-            let mgvc = segue.destination as! ViewController
-            mgvc.Turn = Turn
-        }
-    }
-
+    
 }
