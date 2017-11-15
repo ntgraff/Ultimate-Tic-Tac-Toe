@@ -20,6 +20,8 @@ class SubGameViewController: UIViewController {
 	@IBOutlet weak var buttonBottomRight: UIButton!
 	
 	var SubGame = Game()
+	var boardX = Int()
+	var boardY = Int()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,11 +80,19 @@ class SubGameViewController: UIViewController {
 				winner = "error"
 			}
 			let alert = UIAlertController(title: "Winner", message: winner, preferredStyle: UIAlertControllerStyle.alert)
+			alert.addAction(UIAlertAction(title: "dismis", style: UIAlertActionStyle.default, handler: nil))
 			present(alert, animated: true, completion: nil)
 		}
     }
     @IBAction func backToMainGame(_ sender: UIButton) {
-		//TODO
-    }
+
+	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if (segue.identifier == "BackToMainGame") {
+			let destVC = segue.destination as! ViewController
+			destVC.game.board[boardX][boardY] = SubGame
+		}
+	}
     
 }

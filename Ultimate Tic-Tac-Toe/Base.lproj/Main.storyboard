@@ -142,6 +142,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="buttonBottomLeft" destination="WF5-P1-0EN" id="5JW-oQ-McQ"/>
+                        <outlet property="buttonBottomMiddle" destination="Xoi-7b-4a5" id="3G9-3u-7un"/>
+                        <outlet property="buttonBottomRight" destination="hwC-De-xH3" id="UkL-vg-gUZ"/>
+                        <outlet property="buttonMiddleLeft" destination="GlE-61-4qh" id="ifA-OS-3Ns"/>
+                        <outlet property="buttonMiddleMiddle" destination="LD2-gG-BE0" id="ffY-NK-XUr"/>
+                        <outlet property="buttonMiddleRight" destination="Oqu-1S-Ax2" id="WWY-8z-b18"/>
+                        <outlet property="buttonTopLeft" destination="OdX-wj-C2i" id="6x2-Bc-rcI"/>
+                        <outlet property="buttonTopMiddle" destination="LVt-IZ-scq" id="GwA-Q5-yq9"/>
+                        <outlet property="buttonTopRight" destination="cnd-k0-ItR" id="S9J-8g-eDG"/>
                         <segue destination="ufZ-9y-zmz" kind="show" identifier="SubGame" id="Bnb-bD-Qjb"/>
                     </connections>
                 </viewController>
