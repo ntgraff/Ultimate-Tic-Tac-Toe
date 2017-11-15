@@ -35,9 +35,9 @@ class Game {
 		var img: UIImage
 		switch board[x][y] {
 		case Plr.x:
-			img = #imageLiteral(resourceName: "X")
+			img = #imageLiteral(resourceName: "X128")
 		default:
-			img = #imageLiteral(resourceName: "notO")
+			img = #imageLiteral(resourceName: "notO128")
 		}
 		
 		return (board[x][y], img)
