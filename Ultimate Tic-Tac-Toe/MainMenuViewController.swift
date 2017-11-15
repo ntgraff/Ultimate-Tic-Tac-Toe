@@ -15,13 +15,13 @@ class MainMenuViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if (segue.identifier == "OnePlayer") {
-			let destVC = segue.destination as! ViewController
-			destVC.Players = 0;
-		} else if (segue.identifier == "TwoPlayer") {
-			let destVC = segue.destination as! ViewController
-			destVC.Players = 1;
-		}
-	}
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "OnePlayer") {
+            let destVC = segue.destination as! ViewController
+            destVC.Players = 0;
+        } else if (segue.identifier == "TwoPlayer") {
+            let destVC = segue.destination as! ViewController
+            destVC.Players = 1;
+        }
+    }
 }
