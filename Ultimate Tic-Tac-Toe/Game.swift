@@ -54,22 +54,23 @@ class Game {
 		
 			player = !player
 		}
+		winner = checkForVictory()
 	}
 	
 	public func setAtPoint(x:Int, y:Int, type:Plr) {
 		board[x][y] = type
 	}
 	
-	
-	private func checkForVictory() {
+	private func checkForVictory() -> Plr {
 		for combo in winningCombos {
 			var row: [Plr] = []
 			for space in combo {
 				row.append(board[space.x][space.y])
 			}
-			if (row[0] == row[1] && row[1] == row[2] && row[0] != .none) {
-				winner = row[0]
+			if (row[0] != .none && row[0] == row[1] && row[1] == row[2]) {
+				return row[0]
 			}
 		}
+		return Plr.none
 	}
 }

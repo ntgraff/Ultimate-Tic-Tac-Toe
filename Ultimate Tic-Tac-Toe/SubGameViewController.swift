@@ -66,10 +66,23 @@ class SubGameViewController: UIViewController {
 		}
 		SubGame.turn(x: x, y: y)
 		sender.setImage(SubGame.typeAtPoint(x: x, y: y).img, for: UIControlState.normal)
+		if(SubGame.winner != .none) {
+			var winner = String()
+			switch(SubGame.winner)
+			{
+			case .x:
+				winner = "X"
+			case .o:
+				winner = "O"
+			default:
+				winner = "error"
+			}
+			let alert = UIAlertController(title: "Winner", message: winner, preferredStyle: UIAlertControllerStyle.alert)
+			present(alert, animated: true, completion: nil)
+		}
     }
     @IBAction func backToMainGame(_ sender: UIButton) {
-    
-    
+		//TODO
     }
     
 }
