@@ -12,9 +12,9 @@ import UIKit
 
 class Game {
 	enum Plr:Int{
-		case none
-		case x
-		case o
+		case none = 0
+		case x = 1
+		case o = 2
 	}
 
 	public var winner: Plr = .none
