@@ -20,7 +20,6 @@ class SubGameViewController: UIViewController {
 	@IBOutlet weak var buttonBottomRight: UIButton!
 	
 	var SubGame = Game()
-	var Turn = Int()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,11 +84,5 @@ class SubGameViewController: UIViewController {
     @IBAction func backToMainGame(_ sender: UIButton) {
 		//TODO
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "BackToMainGame" {
-            let mgvc = segue.destination as! ViewController
-            mgvc.Turn = Turn
-        }
-    }
-
+    
 }
