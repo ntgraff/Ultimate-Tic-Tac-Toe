@@ -247,6 +247,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="ctb-iD-Su7"/>
                     </view>
+                    <connections>
+                        <outlet property="buttonBottomLeft" destination="AhC-bR-utO" id="Icn-em-jPo"/>
+                        <outlet property="buttonBottomMiddle" destination="Lrg-rO-vjj" id="hJY-b5-oq5"/>
+                        <outlet property="buttonBottomRight" destination="VpZ-w5-SPU" id="tJ1-GR-lp6"/>
+                        <outlet property="buttonMiddleLeft" destination="kLR-au-Aq7" id="moy-iW-lLy"/>
+                        <outlet property="buttonMiddleMiddle" destination="Z5A-yZ-QGb" id="QFd-m9-Ca6"/>
+                        <outlet property="buttonMiddleRight" destination="Iad-s2-rDn" id="HoU-GR-iVE"/>
+                        <outlet property="buttonTopLeft" destination="dno-MM-tjK" id="2dI-qb-L1m"/>
+                        <outlet property="buttonTopMiddle" destination="jk9-Oo-PB5" id="FyW-D7-D5u"/>
+                        <outlet property="buttonTopRight" destination="WSS-dA-bHU" id="jpH-4c-ap9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LQk-6R-ijL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
