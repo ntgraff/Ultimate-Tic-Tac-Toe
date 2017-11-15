@@ -79,9 +79,10 @@ class SubGameViewController: UIViewController {
             }
             let alert = UIAlertController(title: "Winner", message: winner, preferredStyle: UIAlertControllerStyle.alert)
             present(alert, animated: true, completion: nil)
-            let okAction = UIAlertAction(title: "Ok", style: .default, handler: {action in
-            })
-            alert.addAction(okAction)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: {action in
+            }))
+            
+
         }
     }
     @IBAction func backToMainGame(_ sender: UIButton) {
