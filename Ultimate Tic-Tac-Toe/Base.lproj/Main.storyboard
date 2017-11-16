@@ -137,6 +137,14 @@
                                     <action selector="ButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YK6-bm-Wqv"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZm-aO-yy5">
+                                <rect key="frame" x="34" y="946" width="46" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Quit"/>
+                                <connections>
+                                    <action selector="buttonQuit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h3f-rr-LKR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -241,7 +249,6 @@
                                 <state key="normal" title="Zoom Out"/>
                                 <connections>
                                     <action selector="backToMainGame:" destination="ufZ-9y-zmz" eventType="touchUpInside" id="tGF-jQ-b4i"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="BackToMainGame" id="gOr-r3-Ojf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VpZ-w5-SPU">
@@ -277,7 +284,6 @@
         <image name="board" width="360" height="360"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bnb-bD-Qjb"/>
-        <segue reference="gOr-r3-Ojf"/>
+        <segue reference="T7e-up-NMb"/>
     </inferredMetricsTieBreakers>
 </document>

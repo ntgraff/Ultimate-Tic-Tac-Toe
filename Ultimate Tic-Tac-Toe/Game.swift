@@ -34,10 +34,12 @@ class Game {
 	public func typeAtPoint(x:Int, y:Int) -> (type:Plr, img:UIImage) {
 		var img: UIImage
 		switch board[x][y] {
-		case Plr.x:
+		case .x:
 			img = #imageLiteral(resourceName: "X128")
-		default:
+		case .o:
 			img = #imageLiteral(resourceName: "notO128")
+		default:
+			img = UIImage()
 		}
 		
 		return (board[x][y], img)

@@ -8,7 +8,12 @@
 
 import UIKit
 
+protocol VCMainDelegate {
+	func passBoard(x: Int, y: Int, game: Game)
+}
+
 class SubGameViewController: UIViewController {
+	var delegate: VCMainDelegate?
 	@IBOutlet weak var buttonTopLeft: UIButton!
 	@IBOutlet weak var buttonTopMiddle: UIButton!
 	@IBOutlet weak var buttonTopRight: UIButton!
@@ -23,10 +28,24 @@ class SubGameViewController: UIViewController {
 	var boardX = Int()
 	var boardY = Int()
 	
+	func loadGame() {
+		buttonTopLeft.setImage(SubGame.typeAtPoint(x: 0, y: 0).img, for: UIControlState.normal)
+		buttonTopMiddle.setImage(SubGame.typeAtPoint(x: 1, y: 0).img, for: UIControlState.normal)
+		buttonTopRight.setImage(SubGame.typeAtPoint(x: 2, y: 0).img, for: UIControlState.normal)
+		buttonMiddleLeft.setImage(SubGame.typeAtPoint(x: 0, y: 1).img, for: UIControlState.normal)
+		buttonMiddleMiddle.setImage(SubGame.typeAtPoint(x: 1, y: 1).img, for: UIControlState.normal)
+		buttonMiddleRight.setImage(SubGame.typeAtPoint(x: 2, y: 1).img, for: UIControlState.normal)
+		buttonBottomLeft.setImage(SubGame.typeAtPoint(x: 0, y: 2).img, for: UIControlState.normal)
+		buttonBottomMiddle.setImage(SubGame.typeAtPoint(x: 1, y: 2).img, for: UIControlState.normal)
+		buttonBottomRight.setImage(SubGame.typeAtPoint(x: 2, y: 2).img, for: UIControlState.normal)
+	}
+	
     override func viewDidLoad() {
         super.viewDidLoad()
+		loadGame()
         // Do any additional setup after loading the view.
     }
+	
     @IBAction func subButtonPressed(_ sender: UIButton) {
 		var x: Int = 0
 		var y: Int = 0
@@ -85,14 +104,7 @@ class SubGameViewController: UIViewController {
 		}
     }
     @IBAction func backToMainGame(_ sender: UIButton) {
-
+		delegate?.passBoard(x: boardX, y: boardY, game: SubGame)
+		self.dismiss(animated: true, completion: nil)
 	}
-	
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if (segue.identifier == "BackToMainGame") {
-			let destVC = segue.destination as! ViewController
-			destVC.game.board[boardX][boardY] = SubGame
-		}
-	}
-    
 }
