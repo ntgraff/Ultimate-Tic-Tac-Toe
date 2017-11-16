@@ -87,21 +87,21 @@ class SubGameViewController: UIViewController {
 		}
 		SubGame.turn(x: x, y: y)
 		sender.setImage(SubGame.typeAtPoint(x: x, y: y).img, for: UIControlState.normal)
-		if(SubGame.winner != .none) {
-			var winner = String()
-			switch(SubGame.winner)
-			{
-			case .x:
-				winner = "X"
-			case .o:
-				winner = "O"
-			default:
-				winner = "error"
-			}
-			let alert = UIAlertController(title: "Winner", message: winner, preferredStyle: UIAlertControllerStyle.alert)
-			alert.addAction(UIAlertAction(title: "dismis", style: UIAlertActionStyle.default, handler: nil))
-			present(alert, animated: true, completion: nil)
-		}
+//		if(SubGame.winner != .none) {
+//			var winner = String()
+//			switch(SubGame.winner)
+//			{
+//			case .x:
+//				winner = "X"
+//			case .o:
+//				winner = "O"
+//			default:
+//				winner = "error"
+//			}
+//			let alert = UIAlertController(title: "Winner", message: winner, preferredStyle: UIAlertControllerStyle.alert)
+//			alert.addAction(UIAlertAction(title: "dismiss", style: UIAlertActionStyle.default, handler: nil))
+//			present(alert, animated: true, completion: nil)
+//		}
     }
     @IBAction func backToMainGame(_ sender: UIButton) {
 		delegate?.passBoard(x: boardX, y: boardY, game: SubGame)
