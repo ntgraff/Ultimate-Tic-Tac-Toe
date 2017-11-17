@@ -25,6 +25,7 @@ class ViewController: UIViewController, VCMainDelegate {
 	
     @IBOutlet var imageCollectionTopLeft: [UIImageView]!
     @IBOutlet var imageCollectionTopMiddle: [UIImageView]!
+    @IBOutlet var imageCollectionTopRight: [UIImageView]!
     @IBOutlet var imageCollectionMiddleLeft: [UIImageView]!
     @IBOutlet var imageCollectionMiddleMiddle: [UIImageView]!
     @IBOutlet var imageCollectionMiddleRight: [UIImageView]!
