@@ -7,35 +7,27 @@
 //
 
 import Foundation
-class GameManager {
-	enum Plr:Int{
-		case none = 0
-		case x = 1
-		case o = 2
-	}
+class GameManager: GameParent {
+	
+	public var winner: Plr = .none
+	
 	public var board: [[Game]] = [ [Game(), Game(), Game()],
 	                                [Game(), Game(), Game()],
 	                                [Game(), Game(), Game()] ]
-	private var winningCombos: [[(x: Int, y: Int)]] = [ [ (0, 0), (1, 0), (2, 0) ],  // across the top
-													    [ (0, 1), (1, 1), (2, 1) ],  // across the middle
-														[ (0, 2), (1, 2), (2, 2) ],  // across the bottom
-														[ (0, 0), (0, 1), (0, 2) ],  // down the left
-														[ (1, 0), (1, 1), (1, 2) ],  // down the middle
-														[ (2, 0), (2, 1), (2, 2) ],  // down the right
-														[ (0, 0), (1, 1), (2, 2) ],  // top left to bottom right
-														[ (2, 0), (1, 1), (0, 2) ] ] // top right to bottom left
 	
-//	private func checkForVictory() -> Plr {
-//		for combo in winningCombos {
-//			var row: [Game] = []
-//			for space in combo {
-//				row.append(board[space.x][space.y])
-//			}
-//			if (row[0].winner != .none && row[0].winner == row[1].winner && row[1].winner == row[2].winner) {
-//				return row[0].winner
-//			}
-//		}
-//		return Plr.none
-//	}
+	public func checkForVictory() -> Plr {
+		for combo in winningCombos {
+			var row: [Game] = []
+			for space in combo {
+				row.append(board[space.x][space.y])
+			}
+			if (row[0].winner != .none && row[0].winner == row[1].winner && row[1].winner == row[2].winner) {
+				winner = row[0].winner
+				return row[0].winner
+			}
+		}
+		winner = Plr.none
+		return Plr.none
+	}
 	
 }
