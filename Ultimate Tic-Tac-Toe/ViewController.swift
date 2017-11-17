@@ -45,7 +45,7 @@ class ViewController: UIViewController, VCMainDelegate {
 				winner = "error"
 			}
 			let alert = UIAlertController(title: "Winner", message: winner, preferredStyle: UIAlertControllerStyle.alert)
-			alert.addAction(UIAlertAction(title: "dismiss", style: UIAlertActionStyle.default, handler: nil))
+			alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
 			present(alert, animated: true, completion: nil)
 		}
 	}

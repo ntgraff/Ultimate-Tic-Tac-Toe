@@ -40,7 +40,6 @@ class Game: GameParent {
 			case true:
 				setAtPoint(x: x, y: y, type: .o)
 			}
-		
 			player = !player
 		}
 		winner = checkForVictory()
@@ -51,6 +50,7 @@ class Game: GameParent {
 	}
 	
 	private func checkForVictory() -> Plr {
+		var count: Int = 0
 		for combo in winningCombos {
 			var row: [Plr] = []
 			for space in combo {
@@ -58,6 +58,10 @@ class Game: GameParent {
 			}
 			if (row[0] != .none && row[0] == row[1] && row[1] == row[2]) {
 				return row[0]
+			}
+			count += 1
+			if (count >= 9) {
+				
 			}
 		}
 		return Plr.none
