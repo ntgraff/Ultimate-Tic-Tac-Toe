@@ -22,7 +22,15 @@ class ViewController: UIViewController, VCMainDelegate {
 	@IBOutlet weak var buttonBottomLeft: UIButton!
 	@IBOutlet weak var buttonBottomMiddle: UIButton!
 	@IBOutlet weak var buttonBottomRight: UIButton!
-	
+    @IBOutlet var imageCollectionTopLeft: [UIImageView]!
+    @IBOutlet var imageCollectionTopMiddle: [UIImageView]!
+    @IBOutlet var imageCollectionMiddleLeft: [UIImageView]!
+    @IBOutlet var imageCollectionMiddleMiddle: [UIImageView]!
+    @IBOutlet var imageCollectionMiddleRight: [UIImageView]!
+    @IBOutlet var imageCollectionBottomLeft: [UIImageView]!
+    @IBOutlet var imageCollectionBottomMiddle: [UIImageView]!
+    @IBOutlet var imageCollectionBottomRight: [UIImageView]!
+    
 	var Players = Int()
 	var gameManager = GameManager()
 	var x = Int()
