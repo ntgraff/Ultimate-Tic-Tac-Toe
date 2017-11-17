@@ -102,8 +102,4 @@ class SubGameViewController: UIViewController {
 			}
 		}
     }
-    @IBAction func backToMainGame(_ sender: UIButton) {
-		delegate?.passBoard(x: boardX, y: boardY, game: SubGame, toBoardX: nil, toBoardY: nil)
-		self.dismiss(animated: true, completion: nil)
-	}
 }
