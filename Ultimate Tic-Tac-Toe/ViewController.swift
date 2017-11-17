@@ -22,6 +22,7 @@ class ViewController: UIViewController, VCMainDelegate {
 	@IBOutlet weak var buttonBottomLeft: UIButton!
 	@IBOutlet weak var buttonBottomMiddle: UIButton!
 	@IBOutlet weak var buttonBottomRight: UIButton!
+	
     @IBOutlet var imageCollectionTopLeft: [UIImageView]!
     @IBOutlet var imageCollectionTopMiddle: [UIImageView]!
     @IBOutlet var imageCollectionMiddleLeft: [UIImageView]!
@@ -49,8 +50,10 @@ class ViewController: UIViewController, VCMainDelegate {
 				winner = "X"
 			case .o:
 				winner = "O"
+			case .neither:
+				winner = "Nobody"
 			default:
-				winner = "error"
+				winner = "Error"
 			}
 			let alert = UIAlertController(title: "Winner", message: winner, preferredStyle: UIAlertControllerStyle.alert)
 			alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
