@@ -37,8 +37,26 @@ class ViewController: UIViewController, VCMainDelegate {
 	var y = Int()
 	
     override func viewDidLoad() {
-        
+		super.viewDidLoad()
     }
+	
+	override func viewDidAppear(_ animated: Bool) {
+		if(gameManager.checkForVictory() != .none) {
+			var winner = String()
+			switch(gameManager.winner)
+			{
+			case .x:
+				winner = "X"
+			case .o:
+				winner = "O"
+			default:
+				winner = "error"
+			}
+			let alert = UIAlertController(title: "Winner", message: winner, preferredStyle: UIAlertControllerStyle.alert)
+			alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+			present(alert, animated: true, completion: nil)
+		}
+	}
 	
 	func passBoard(x: Int, y: Int, game: Game) {
 		gameManager.board[x][y] = game
