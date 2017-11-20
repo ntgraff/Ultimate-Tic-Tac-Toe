@@ -13,8 +13,8 @@ class GameParent {
 		case none = 0
 		case x = 1
 		case o = 2
+		case neither = 3
 	}
-	
 	public var winningCombos: [[(x: Int, y: Int)]] = [ [ (0, 0), (1, 0), (2, 0) ],  // across the top
 														[ (0, 1), (1, 1), (2, 1) ],  // across the middle
 														[ (0, 2), (1, 2), (2, 2) ],  // across the bottom

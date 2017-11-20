@@ -22,6 +22,7 @@ class ViewController: UIViewController, VCMainDelegate {
 	@IBOutlet weak var buttonBottomLeft: UIButton!
 	@IBOutlet weak var buttonBottomMiddle: UIButton!
 	@IBOutlet weak var buttonBottomRight: UIButton!
+	
     @IBOutlet var imageCollectionTopLeft: [UIImageView]!
     @IBOutlet var imageCollectionTopMiddle: [UIImageView]!
     @IBOutlet var imageCollectionTopRight: [UIImageView]!
@@ -31,17 +32,22 @@ class ViewController: UIViewController, VCMainDelegate {
     @IBOutlet var imageCollectionBottomLeft: [UIImageView]!
     @IBOutlet var imageCollectionBottomMiddle: [UIImageView]!
     @IBOutlet var imageCollectionBottomRight: [UIImageView]!
+	
+	var imageCollections = [[UIImageView]]()
     
 	var Players = Int()
 	var gameManager = GameManager()
 	var x = Int()
 	var y = Int()
+	var toBoard: (x: Int, y:Int) = (1, 1)
 	
     override func viewDidLoad() {
 		super.viewDidLoad()
+		imageCollections = [ imageCollectionTopLeft, imageCollectionTopMiddle, imageCollectionTopRight, imageCollectionMiddleLeft, imageCollectionMiddleMiddle, imageCollectionMiddleRight, imageCollectionBottomLeft, imageCollectionBottomMiddle, imageCollectionBottomRight ]
     }
 	
 	override func viewDidAppear(_ animated: Bool) {
+		loadGame()
 		if(gameManager.checkForVictory() != .none) {
 			var winner = String()
 			switch(gameManager.winner)
@@ -50,8 +56,10 @@ class ViewController: UIViewController, VCMainDelegate {
 				winner = "X"
 			case .o:
 				winner = "O"
+			case .neither:
+				winner = "Nobody"
 			default:
-				winner = "error"
+				winner = "Error"
 			}
 			let alert = UIAlertController(title: "Winner", message: winner, preferredStyle: UIAlertControllerStyle.alert)
 			alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
@@ -59,8 +67,19 @@ class ViewController: UIViewController, VCMainDelegate {
 		}
 	}
 	
-	func passBoard(x: Int, y: Int, game: Game) {
+	func loadGame() {
+		for col in imageCollections.indices {
+			for image in imageCollections[col].indices {
+				print("\(image % 3), \(image / 3)")
+				imageCollections[col][image].image = gameManager.board[col % 3][col / 3].typeAtPoint(x: image  % 3, y: image / 3).img
+			}
+		}
+	}
+	
+	func passBoard(x: Int, y: Int, game: Game, toBoardX: Int, toBoardY: Int) {
 		gameManager.board[x][y] = game
+		toBoard.x = toBoardX
+		toBoard.y = toBoardY
 		print("game sent back")
 	}
 	

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol VCMainDelegate {
-	func passBoard(x: Int, y: Int, game: Game)
+	func passBoard(x: Int, y: Int, game: Game, toBoardX: Int, toBoardY: Int)
 }
 
 class SubGameViewController: UIViewController {
@@ -87,24 +87,17 @@ class SubGameViewController: UIViewController {
 		}
 		SubGame.turn(x: x, y: y)
 		sender.setImage(SubGame.typeAtPoint(x: x, y: y).img, for: UIControlState.normal)
-//		if(SubGame.winner != .none) {
-//			var winner = String()
-//			switch(SubGame.winner)
-//			{
-//			case .x:
-//				winner = "X"
-//			case .o:
-//				winner = "O"
-//			default:
-//				winner = "error"
-//			}
-//			let alert = UIAlertController(title: "Winner", message: winner, preferredStyle: UIAlertControllerStyle.alert)
-//			alert.addAction(UIAlertAction(title: "dismiss", style: UIAlertActionStyle.default, handler: nil))
-//			present(alert, animated: true, completion: nil)
-//		}
+		switch(SubGame.winner)
+		{
+		case .x, .o:
+			delegate?.passBoard(x: boardX, y: boardY, game: SubGame, toBoardX: x, toBoardY: y)
+			self.dismiss(animated: true, completion: nil)
+		case .neither:
+			delegate?.passBoard(x: boardX, y: boardY, game: Game(), toBoardX: x, toBoardY: y)
+			self.dismiss(animated: true, completion: nil)
+		default:
+			delegate?.passBoard(x: boardX, y: boardY, game: SubGame, toBoardX: x, toBoardY: y);
+			self.dismiss(animated: true, completion: nil)
+		}
     }
-    @IBAction func backToMainGame(_ sender: UIButton) {
-		delegate?.passBoard(x: boardX, y: boardY, game: SubGame)
-		self.dismiss(animated: true, completion: nil)
-	}
 }
