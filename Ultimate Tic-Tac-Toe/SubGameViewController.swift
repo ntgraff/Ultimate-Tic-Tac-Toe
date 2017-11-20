@@ -87,19 +87,17 @@ class SubGameViewController: UIViewController {
 		}
 		SubGame.turn(x: x, y: y)
 		sender.setImage(SubGame.typeAtPoint(x: x, y: y).img, for: UIControlState.normal)
-		if(SubGame.winner != .none) {
-			switch(SubGame.winner)
-			{
-			case .x, .o:
-				delegate?.passBoard(x: boardX, y: boardY, game: SubGame, toBoardX: x, toBoardY: y)
-				self.dismiss(animated: true, completion: nil)
-			case .neither:
-				delegate?.passBoard(x: boardX, y: boardY, game: Game(), toBoardX: x, toBoardY: y)
-				self.dismiss(animated: true, completion: nil)
-			default:
-				delegate?.passBoard(x: boardX, y: boardY, game: SubGame, toBoardX: <#T##Int#>, toBoardY: <#T##Int#>)
-				break
-			}
+		switch(SubGame.winner)
+		{
+		case .x, .o:
+			delegate?.passBoard(x: boardX, y: boardY, game: SubGame, toBoardX: x, toBoardY: y)
+			self.dismiss(animated: true, completion: nil)
+		case .neither:
+			delegate?.passBoard(x: boardX, y: boardY, game: Game(), toBoardX: x, toBoardY: y)
+			self.dismiss(animated: true, completion: nil)
+		default:
+			delegate?.passBoard(x: boardX, y: boardY, game: SubGame, toBoardX: x, toBoardY: y);
+			self.dismiss(animated: true, completion: nil)
 		}
     }
 }
