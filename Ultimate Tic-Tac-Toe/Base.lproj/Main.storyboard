@@ -1084,9 +1084,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Zoom Out"/>
-                                <connections>
-                                    <action selector="backToMainGame:" destination="ufZ-9y-zmz" eventType="touchUpInside" id="tGF-jQ-b4i"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VpZ-w5-SPU">
                                 <rect key="frame" x="510" y="638" width="215" height="215"/>
