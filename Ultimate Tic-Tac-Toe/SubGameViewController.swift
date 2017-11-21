@@ -86,9 +86,11 @@ class SubGameViewController: UIViewController {
 			x = 2
 			y = 2
 		}
-		SubGame.turn(x: x, y: y)
-		sender.setImage(SubGame.typeAtPoint(x: x, y: y).img, for: UIControlState.normal)
-		delegate?.passBoard(x: boardX, y: boardY, game: SubGame, toBoardX: x, toBoardY: y, player: SubGame.player)
-		self.dismiss(animated: true, completion: nil)
+		if (SubGame.typeAtPoint(x: x, y: y).type == .none) {
+			SubGame.turn(x: x, y: y)
+			sender.setImage(SubGame.typeAtPoint(x: x, y: y).img, for: UIControlState.normal)
+			delegate?.passBoard(x: boardX, y: boardY, game: SubGame, toBoardX: x, toBoardY: y, player: SubGame.player)
+			self.dismiss(animated: true, completion: nil)
+		}
     }
 }
