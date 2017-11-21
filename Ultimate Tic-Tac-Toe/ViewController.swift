@@ -74,16 +74,25 @@ class ViewController: UIViewController, VCMainDelegate {
 	
 	func loadGame() {
 		for col in imageCollections.indices {
+			// set the x and o's of the sub games
 			for image in imageCollections[col].indices {
-				if (!(toBoard.x == col % 3) || !(toBoard.y == col / 3)) {
-					buttonArray[col].backgroundColor = UIColor(red: CGFloat(1), green: CGFloat(1), blue: CGFloat(1), alpha: CGFloat(0.0))
-					
-				}
-				else {
-					buttonArray[col].backgroundColor = UIColor(red: CGFloat(1), green: CGFloat(1), blue: CGFloat(1), alpha: CGFloat(0.3))
-				}
 				imageCollections[col][image].image = gameManager.board[col % 3][col / 3].typeAtPoint(x: image  % 3, y: image / 3).img
 			}
+			
+			// set button tint
+			if (!(toBoard.x == col % 3) || !(toBoard.y == col / 3)) {
+				buttonArray[col].backgroundColor = UIColor(red: CGFloat(1), green: CGFloat(1), blue: CGFloat(1), alpha: CGFloat(0.0))
+			}
+			
+			else {
+				buttonArray[col].backgroundColor = UIColor(red: CGFloat(1), green: CGFloat(1), blue: CGFloat(1), alpha: CGFloat(0.3))
+			}
+		}
+		if (gameManager.board[toBoard.x][toBoard.y].winner != .none) {
+			for button in buttonArray.indices {
+				buttonArray[button].backgroundColor = UIColor(red: CGFloat(1), green: CGFloat(1), blue: CGFloat(1), alpha: CGFloat(0.3))
+			}
+			buttonArray[toBoard.x + 3 * toBoard.y].backgroundColor = UIColor(red: CGFloat(1), green: CGFloat(1), blue: CGFloat(1), alpha: CGFloat(0.0))
 		}
 	}
 	
