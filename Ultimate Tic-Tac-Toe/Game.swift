@@ -12,6 +12,7 @@ import UIKit
 
 class Game: GameParent {
 	public var winner: Plr = .none
+	public var player = Bool()
 	private var board: [[Plr]] = [ [Plr.none, Plr.none, Plr.none],
 	                               [Plr.none, Plr.none, Plr.none],
 	                               [Plr.none, Plr.none, Plr.none] ]
@@ -26,10 +27,8 @@ class Game: GameParent {
 		default:
 			img = UIImage()
 		}
-		
 		return (board[x][y], img)
 	}
-	private var player = Bool()
 	public func turn(x: Int, y: Int) {
 		if (board[x][y] == .none) {
 			switch player {
