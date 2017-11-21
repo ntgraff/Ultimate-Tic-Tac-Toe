@@ -10,11 +10,10 @@ import Foundation
 class GameManager: GameParent {
 	
 	public var winner: Plr = .none
-	
+	public var player = Bool()
 	public var board: [[Game]] = [ [Game(), Game(), Game()],
 	                               [Game(), Game(), Game()],
 	                               [Game(), Game(), Game()] ]
-	private var player = Bool()
 	public func checkForVictory() -> Plr {
 		var count: Int = 0
 		for combo in winningCombos {

@@ -8,11 +8,7 @@
 
 import UIKit
 
-
-
 class ViewController: UIViewController, VCMainDelegate {
-	
-	
 	@IBOutlet weak var buttonTopLeft: UIButton!
 	@IBOutlet weak var buttonTopMiddle: UIButton!
 	@IBOutlet weak var buttonTopRight: UIButton!
@@ -46,8 +42,11 @@ class ViewController: UIViewController, VCMainDelegate {
 		imageCollections = [ imageCollectionTopLeft, imageCollectionTopMiddle, imageCollectionTopRight, imageCollectionMiddleLeft, imageCollectionMiddleMiddle, imageCollectionMiddleRight, imageCollectionBottomLeft, imageCollectionBottomMiddle, imageCollectionBottomRight ]
     }
 	
-	override func viewDidAppear(_ animated: Bool) {
+	override func viewWillAppear(_ animated: Bool) {
 		loadGame()
+	}
+	
+	override func viewDidAppear(_ animated: Bool) {
 		if(gameManager.checkForVictory() != .none) {
 			var winner = String()
 			switch(gameManager.winner)
@@ -76,8 +75,9 @@ class ViewController: UIViewController, VCMainDelegate {
 		}
 	}
 	
-	func passBoard(x: Int, y: Int, game: Game, toBoardX: Int, toBoardY: Int) {
+	func passBoard(x: Int, y: Int, game: Game, toBoardX: Int, toBoardY: Int, player: Bool) {
 		gameManager.board[x][y] = game
+		gameManager.player = player
 		toBoard.x = toBoardX
 		toBoard.y = toBoardY
 		print("game sent back")
@@ -135,6 +135,7 @@ class ViewController: UIViewController, VCMainDelegate {
             destVC.SubGame = gameManager.board[x][y]
 			destVC.boardX = x
 			destVC.boardY = y
+			destVC.SubGame.player = gameManager.player
 			destVC.delegate = self
         }
     }
