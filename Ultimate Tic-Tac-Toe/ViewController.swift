@@ -19,6 +19,8 @@ class ViewController: UIViewController, VCMainDelegate {
 	@IBOutlet weak var buttonBottomMiddle: UIButton!
 	@IBOutlet weak var buttonBottomRight: UIButton!
 	
+	var buttonArray = [UIButton]()
+	
     @IBOutlet var imageCollectionTopLeft: [UIImageView]!
     @IBOutlet var imageCollectionTopMiddle: [UIImageView]!
     @IBOutlet var imageCollectionTopRight: [UIImageView]!
@@ -40,6 +42,7 @@ class ViewController: UIViewController, VCMainDelegate {
     override func viewDidLoad() {
 		super.viewDidLoad()
 		imageCollections = [ imageCollectionTopLeft, imageCollectionTopMiddle, imageCollectionTopRight, imageCollectionMiddleLeft, imageCollectionMiddleMiddle, imageCollectionMiddleRight, imageCollectionBottomLeft, imageCollectionBottomMiddle, imageCollectionBottomRight ]
+		buttonArray = [ buttonTopLeft, buttonTopMiddle, buttonTopRight, buttonMiddleLeft, buttonMiddleMiddle, buttonMiddleRight, buttonBottomLeft, buttonBottomMiddle, buttonBottomRight ]
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -61,7 +64,9 @@ class ViewController: UIViewController, VCMainDelegate {
 				winner = "Error"
 			}
 			let alert = UIAlertController(title: "Winner", message: winner, preferredStyle: UIAlertControllerStyle.alert)
-			alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+			alert.addAction(UIAlertAction(title: "Main Menu", style: UIAlertActionStyle.default, handler: { action in
+				self.dismiss(animated: true, completion: nil)
+			}))
 			present(alert, animated: true, completion: nil)
 		}
 	}
@@ -69,7 +74,12 @@ class ViewController: UIViewController, VCMainDelegate {
 	func loadGame() {
 		for col in imageCollections.indices {
 			for image in imageCollections[col].indices {
-				print("\(image % 3), \(image / 3)")
+				if (!(toBoard.x == col % 3) || !(toBoard.y == col / 3)) {
+					buttonArray[col].backgroundColor = UIColor(red: CGFloat(0), green: CGFloat(0), blue: CGFloat(0), alpha: CGFloat(0.3))
+				}
+				else {
+					buttonArray[col].backgroundColor = UIColor(red: CGFloat(1), green: CGFloat(1), blue: CGFloat(1), alpha: CGFloat(0.0))
+				}
 				imageCollections[col][image].image = gameManager.board[col % 3][col / 3].typeAtPoint(x: image  % 3, y: image / 3).img
 			}
 		}
@@ -122,7 +132,9 @@ class ViewController: UIViewController, VCMainDelegate {
             x = 2
             y = 2
         }
-        performSegue(withIdentifier: "SubGame", sender: self)
+		if (gameManager.board[x][y].winner == .none) {
+			performSegue(withIdentifier: "SubGame", sender: self)
+		}
     }
     
 	@IBAction func buttonQuit(_ sender: UIButton) {
