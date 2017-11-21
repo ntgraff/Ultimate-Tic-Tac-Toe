@@ -41,6 +41,7 @@ class ViewController: UIViewController, VCMainDelegate {
 	
     override func viewDidLoad() {
 		super.viewDidLoad()
+		self.view.backgroundColor = UIColor(red: CGFloat(0.3), green: CGFloat(0.3), blue: CGFloat(0.3), alpha: CGFloat(1))
 		imageCollections = [ imageCollectionTopLeft, imageCollectionTopMiddle, imageCollectionTopRight, imageCollectionMiddleLeft, imageCollectionMiddleMiddle, imageCollectionMiddleRight, imageCollectionBottomLeft, imageCollectionBottomMiddle, imageCollectionBottomRight ]
 		buttonArray = [ buttonTopLeft, buttonTopMiddle, buttonTopRight, buttonMiddleLeft, buttonMiddleMiddle, buttonMiddleRight, buttonBottomLeft, buttonBottomMiddle, buttonBottomRight ]
     }
@@ -75,10 +76,11 @@ class ViewController: UIViewController, VCMainDelegate {
 		for col in imageCollections.indices {
 			for image in imageCollections[col].indices {
 				if (!(toBoard.x == col % 3) || !(toBoard.y == col / 3)) {
-					buttonArray[col].backgroundColor = UIColor(red: CGFloat(0), green: CGFloat(0), blue: CGFloat(0), alpha: CGFloat(0.3))
+					buttonArray[col].backgroundColor = UIColor(red: CGFloat(1), green: CGFloat(1), blue: CGFloat(1), alpha: CGFloat(0.0))
+					
 				}
 				else {
-					buttonArray[col].backgroundColor = UIColor(red: CGFloat(1), green: CGFloat(1), blue: CGFloat(1), alpha: CGFloat(0.0))
+					buttonArray[col].backgroundColor = UIColor(red: CGFloat(1), green: CGFloat(1), blue: CGFloat(1), alpha: CGFloat(0.3))
 				}
 				imageCollections[col][image].image = gameManager.board[col % 3][col / 3].typeAtPoint(x: image  % 3, y: image / 3).img
 			}
@@ -132,7 +134,7 @@ class ViewController: UIViewController, VCMainDelegate {
             x = 2
             y = 2
         }
-		if (gameManager.board[x][y].winner == .none) {
+		if (buttonArray[x + 3 * y].backgroundColor == UIColor(red: CGFloat(1), green: CGFloat(1), blue: CGFloat(1), alpha: CGFloat(0.3))) {
 			performSegue(withIdentifier: "SubGame", sender: self)
 		}
     }
