@@ -43,6 +43,7 @@ class SubGameViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		self.view.backgroundColor = UIColor(red: CGFloat(0.6), green: CGFloat(0.6), blue: CGFloat(0.6), alpha: CGFloat(1))
 		loadGame()
         // Do any additional setup after loading the view.
     }
