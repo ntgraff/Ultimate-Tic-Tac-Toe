@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+
 class GameManager: GameParent {
 	
 	public var winner: Plr = .none
@@ -14,6 +16,17 @@ class GameManager: GameParent {
 	public var board: [[Game]] = [ [Game(), Game(), Game()],
 	                               [Game(), Game(), Game()],
 	                               [Game(), Game(), Game()] ]
+	public func imageAtPoint(x: Int, y:Int) -> UIImage {
+		switch(board[x][y].winner) {
+		case .x:
+			return #imageLiteral(resourceName: "X128")
+		case .o:
+			return #imageLiteral(resourceName: "notO128")
+		default:
+			return UIImage()
+		}
+	}
+		
 	public func checkForVictory() -> Plr {
 		var count: Int = 0
 		for combo in winningCombos {
