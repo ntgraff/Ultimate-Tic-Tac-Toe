@@ -78,23 +78,32 @@ class ViewController: UIViewController, VCMainDelegate {
 			for image in imageCollections[col].indices {
 				imageCollections[col][image].image = gameManager.board[col % 3][col / 3].typeAtPoint(x: image  % 3, y: image / 3).img
 			}
-			
-			// set button tint
-			if (!(toBoard.x == col % 3) || !(toBoard.y == col / 3)) {
-				buttonArray[col].backgroundColor = UIColor(red: CGFloat(1), green: CGFloat(1), blue: CGFloat(1), alpha: CGFloat(0.0))
-			}
-			
-			else {
-				buttonArray[col].backgroundColor = UIColor(red: CGFloat(1), green: CGFloat(1), blue: CGFloat(1), alpha: CGFloat(0.3))
+		}
+		// set button tint
+		if (gameManager.board[toBoard.x][toBoard.y].winner == .none) {
+			for button in buttonArray.indices {
+				buttonArray[button].setImage(gameManager.imageAtPoint(x: button % 3, y: button / 3), for: UIControlState.normal)
+				if (toBoard.x != button % 3 || toBoard.y != button / 3) {
+					buttonArray[button].backgroundColor = UIColor(red: CGFloat(1), green: CGFloat(1), blue: CGFloat(1), alpha: CGFloat(0.0))
+				}
+				else {
+					buttonArray[button].backgroundColor = UIColor(red: CGFloat(1), green: CGFloat(1), blue: CGFloat(1), alpha: CGFloat(0.3))
+				}
 			}
 		}
-		if (gameManager.board[toBoard.x][toBoard.y].winner != .none) {
+		else {
 			for button in buttonArray.indices {
-				buttonArray[button].backgroundColor = UIColor(red: CGFloat(1), green: CGFloat(1), blue: CGFloat(1), alpha: CGFloat(0.3))
+				buttonArray[button].setImage(gameManager.imageAtPoint(x: button % 3, y: button / 3), for: UIControlState.normal)
+				if (gameManager.board[button % 3][button / 3].winner == .none) {
+					buttonArray[button].backgroundColor = UIColor(red: CGFloat(1), green: CGFloat(1), blue: CGFloat(1), alpha: CGFloat(0.3))
+				}
+				else {
+					buttonArray[button].backgroundColor = UIColor(red: CGFloat(1), green: CGFloat(1), blue: CGFloat(1), alpha: CGFloat(0.0))
+				}
 			}
-			buttonArray[toBoard.x + 3 * toBoard.y].backgroundColor = UIColor(red: CGFloat(1), green: CGFloat(1), blue: CGFloat(1), alpha: CGFloat(0.0))
 		}
 	}
+		
 	
 	func passBoard(x: Int, y: Int, game: Game, toBoardX: Int, toBoardY: Int, player: Bool) {
 		gameManager.board[x][y] = game
