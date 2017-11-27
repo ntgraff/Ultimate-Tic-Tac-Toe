@@ -538,15 +538,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="buttonBottomLeft" destination="WF5-P1-0EN" id="5JW-oQ-McQ"/>
-                        <outlet property="buttonBottomMiddle" destination="Xoi-7b-4a5" id="3G9-3u-7un"/>
-                        <outlet property="buttonBottomRight" destination="hwC-De-xH3" id="UkL-vg-gUZ"/>
-                        <outlet property="buttonMiddleLeft" destination="GlE-61-4qh" id="ifA-OS-3Ns"/>
-                        <outlet property="buttonMiddleMiddle" destination="LD2-gG-BE0" id="ffY-NK-XUr"/>
-                        <outlet property="buttonMiddleRight" destination="Oqu-1S-Ax2" id="WWY-8z-b18"/>
-                        <outlet property="buttonTopLeft" destination="OdX-wj-C2i" id="6x2-Bc-rcI"/>
-                        <outlet property="buttonTopMiddle" destination="LVt-IZ-scq" id="GwA-Q5-yq9"/>
-                        <outlet property="buttonTopRight" destination="cnd-k0-ItR" id="S9J-8g-eDG"/>
                         <outletCollection property="imageCollectionTopLeft" destination="8tQ-Lu-uCy" collectionClass="NSMutableArray" id="JVg-ON-gMO"/>
                         <outletCollection property="imageCollectionTopLeft" destination="ly6-Fl-XJ2" collectionClass="NSMutableArray" id="cpl-1E-mBF"/>
                         <outletCollection property="imageCollectionTopLeft" destination="172-bK-bvH" collectionClass="NSMutableArray" id="wvY-ve-xao"/>
@@ -628,6 +619,15 @@
                         <outletCollection property="imageCollectionBottomRight" destination="kjG-8z-pq1" collectionClass="NSMutableArray" id="VvR-ry-OVB"/>
                         <outletCollection property="imageCollectionBottomRight" destination="UYB-Cp-NHC" collectionClass="NSMutableArray" id="Tt6-cg-flX"/>
                         <outletCollection property="imageCollectionBottomRight" destination="U0a-ig-6fL" collectionClass="NSMutableArray" id="mjO-Pn-inF"/>
+                        <outletCollection property="buttons" destination="OdX-wj-C2i" collectionClass="NSMutableArray" id="4L5-lv-gJD"/>
+                        <outletCollection property="buttons" destination="LVt-IZ-scq" collectionClass="NSMutableArray" id="vM8-xU-yT9"/>
+                        <outletCollection property="buttons" destination="cnd-k0-ItR" collectionClass="NSMutableArray" id="Ot2-2E-wss"/>
+                        <outletCollection property="buttons" destination="GlE-61-4qh" collectionClass="NSMutableArray" id="vV1-Eg-4De"/>
+                        <outletCollection property="buttons" destination="LD2-gG-BE0" collectionClass="NSMutableArray" id="El0-of-ltg"/>
+                        <outletCollection property="buttons" destination="Oqu-1S-Ax2" collectionClass="NSMutableArray" id="Vcf-vA-xqE"/>
+                        <outletCollection property="buttons" destination="WF5-P1-0EN" collectionClass="NSMutableArray" id="Fel-C2-vO2"/>
+                        <outletCollection property="buttons" destination="Xoi-7b-4a5" collectionClass="NSMutableArray" id="Gj9-bS-dmP"/>
+                        <outletCollection property="buttons" destination="hwC-De-xH3" collectionClass="NSMutableArray" id="GCK-CK-IHa"/>
                         <segue destination="ufZ-9y-zmz" kind="show" identifier="SubGame" id="Bnb-bD-Qjb"/>
                     </connections>
                 </viewController>
@@ -649,6 +649,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dno-MM-tjK">
                                 <rect key="frame" x="43" y="172" width="215" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="subButtonPressed:" destination="ufZ-9y-zmz" eventType="touchUpInside" id="FcB-BB-eHZ"/>
                                 </connections>
@@ -656,6 +657,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jk9-Oo-PB5">
                                 <rect key="frame" x="277" y="172" width="215" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="subButtonPressed:" destination="ufZ-9y-zmz" eventType="touchUpInside" id="UT6-69-Jc1"/>
                                 </connections>
@@ -663,6 +665,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSS-dA-bHU">
                                 <rect key="frame" x="510" y="172" width="215" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="subButtonPressed:" destination="ufZ-9y-zmz" eventType="touchUpInside" id="kXQ-wk-Zeu"/>
                                 </connections>
@@ -670,6 +673,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLR-au-Aq7">
                                 <rect key="frame" x="43" y="405" width="215" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="subButtonPressed:" destination="ufZ-9y-zmz" eventType="touchUpInside" id="fUH-oV-9Xt"/>
                                 </connections>
@@ -677,6 +681,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5A-yZ-QGb">
                                 <rect key="frame" x="277" y="405" width="215" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="subButtonPressed:" destination="ufZ-9y-zmz" eventType="touchUpInside" id="4gn-CW-YzF"/>
                                 </connections>
@@ -684,6 +689,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iad-s2-rDn">
                                 <rect key="frame" x="510" y="405" width="215" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="subButtonPressed:" destination="ufZ-9y-zmz" eventType="touchUpInside" id="1t9-Ox-wkI"/>
                                 </connections>
@@ -691,6 +697,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AhC-bR-utO">
                                 <rect key="frame" x="43" y="638" width="215" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="subButtonPressed:" destination="ufZ-9y-zmz" eventType="touchUpInside" id="jBL-uA-2Ri"/>
                                 </connections>
@@ -698,6 +705,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lrg-rO-vjj">
                                 <rect key="frame" x="277" y="638" width="215" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="subButtonPressed:" destination="ufZ-9y-zmz" eventType="touchUpInside" id="yIK-jy-8WF"/>
                                 </connections>
@@ -705,6 +713,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VpZ-w5-SPU">
                                 <rect key="frame" x="510" y="638" width="215" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="subButtonPressed:" destination="ufZ-9y-zmz" eventType="touchUpInside" id="gaY-gH-DBy"/>
                                 </connections>
@@ -720,15 +729,15 @@
                         <viewLayoutGuide key="safeArea" id="ctb-iD-Su7"/>
                     </view>
                     <connections>
-                        <outlet property="buttonBottomLeft" destination="AhC-bR-utO" id="Icn-em-jPo"/>
-                        <outlet property="buttonBottomMiddle" destination="Lrg-rO-vjj" id="hJY-b5-oq5"/>
-                        <outlet property="buttonBottomRight" destination="VpZ-w5-SPU" id="tJ1-GR-lp6"/>
-                        <outlet property="buttonMiddleLeft" destination="kLR-au-Aq7" id="moy-iW-lLy"/>
-                        <outlet property="buttonMiddleMiddle" destination="Z5A-yZ-QGb" id="QFd-m9-Ca6"/>
-                        <outlet property="buttonMiddleRight" destination="Iad-s2-rDn" id="HoU-GR-iVE"/>
-                        <outlet property="buttonTopLeft" destination="dno-MM-tjK" id="2dI-qb-L1m"/>
-                        <outlet property="buttonTopMiddle" destination="jk9-Oo-PB5" id="FyW-D7-D5u"/>
-                        <outlet property="buttonTopRight" destination="WSS-dA-bHU" id="jpH-4c-ap9"/>
+                        <outletCollection property="buttons" destination="dno-MM-tjK" collectionClass="NSMutableArray" id="WeK-ul-MLL"/>
+                        <outletCollection property="buttons" destination="jk9-Oo-PB5" collectionClass="NSMutableArray" id="aST-uv-F0M"/>
+                        <outletCollection property="buttons" destination="WSS-dA-bHU" collectionClass="NSMutableArray" id="DfH-4J-0wb"/>
+                        <outletCollection property="buttons" destination="kLR-au-Aq7" collectionClass="NSMutableArray" id="apv-Kc-RQO"/>
+                        <outletCollection property="buttons" destination="Z5A-yZ-QGb" collectionClass="NSMutableArray" id="ZPa-Ph-gsx"/>
+                        <outletCollection property="buttons" destination="Iad-s2-rDn" collectionClass="NSMutableArray" id="Bfz-eX-EdX"/>
+                        <outletCollection property="buttons" destination="AhC-bR-utO" collectionClass="NSMutableArray" id="nzR-rd-oGp"/>
+                        <outletCollection property="buttons" destination="Lrg-rO-vjj" collectionClass="NSMutableArray" id="jds-yc-xRV"/>
+                        <outletCollection property="buttons" destination="VpZ-w5-SPU" collectionClass="NSMutableArray" id="B4T-7Z-Y9w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LQk-6R-ijL" userLabel="First Responder" sceneMemberID="firstResponder"/>
