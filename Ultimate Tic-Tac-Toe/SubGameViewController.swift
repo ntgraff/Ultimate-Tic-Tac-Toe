@@ -15,30 +15,16 @@ protocol VCMainDelegate {
 class SubGameViewController: UIViewController {
 	var delegate: VCMainDelegate?
 	
-	@IBOutlet weak var buttonTopLeft: UIButton!
-	@IBOutlet weak var buttonTopMiddle: UIButton!
-	@IBOutlet weak var buttonTopRight: UIButton!
-	@IBOutlet weak var buttonMiddleLeft: UIButton!
-	@IBOutlet weak var buttonMiddleMiddle: UIButton!
-	@IBOutlet weak var buttonMiddleRight: UIButton!
-	@IBOutlet weak var buttonBottomLeft: UIButton!
-	@IBOutlet weak var buttonBottomMiddle: UIButton!
-	@IBOutlet weak var buttonBottomRight: UIButton!
+	@IBOutlet var buttons: [UIButton]!
 	
 	var SubGame = Game()
 	var boardX = Int()
 	var boardY = Int()
 	
 	func loadGame() {
-		buttonTopLeft.setImage(SubGame.typeAtPoint(x: 0, y: 0).img, for: UIControlState.normal)
-		buttonTopMiddle.setImage(SubGame.typeAtPoint(x: 1, y: 0).img, for: UIControlState.normal)
-		buttonTopRight.setImage(SubGame.typeAtPoint(x: 2, y: 0).img, for: UIControlState.normal)
-		buttonMiddleLeft.setImage(SubGame.typeAtPoint(x: 0, y: 1).img, for: UIControlState.normal)
-		buttonMiddleMiddle.setImage(SubGame.typeAtPoint(x: 1, y: 1).img, for: UIControlState.normal)
-		buttonMiddleRight.setImage(SubGame.typeAtPoint(x: 2, y: 1).img, for: UIControlState.normal)
-		buttonBottomLeft.setImage(SubGame.typeAtPoint(x: 0, y: 2).img, for: UIControlState.normal)
-		buttonBottomMiddle.setImage(SubGame.typeAtPoint(x: 1, y: 2).img, for: UIControlState.normal)
-		buttonBottomRight.setImage(SubGame.typeAtPoint(x: 2, y: 2).img, for: UIControlState.normal)
+		for i in buttons.indices {
+			buttons[i].setImage(SubGame.typeAtPoint(x: i % 3, y: i / 3).img, for: UIControlState.normal)
+		}
 	}
 	
     override func viewDidLoad() {
@@ -51,41 +37,12 @@ class SubGameViewController: UIViewController {
     @IBAction func subButtonPressed(_ sender: UIButton) {
 		var x: Int = 0
 		var y: Int = 0
-		if (sender == buttonTopLeft) {
-			x = 0
-			y = 0
-		}
-		else if (sender == buttonTopMiddle) {
-			x = 1
-			y = 0
-		}
-		else if (sender == buttonTopRight) {
-			x = 2
-			y = 0
-		}
-		else if (sender == buttonMiddleLeft) {
-			x = 0
-			y = 1
-		}
-		else if (sender == buttonMiddleMiddle) {
-			x = 1
-			y = 1
-		}
-		else if (sender == buttonMiddleRight) {
-			x = 2
-			y = 1
-		}
-		else if (sender == buttonBottomLeft) {
-			x = 0
-			y = 2
-		}
-		else if (sender == buttonBottomMiddle) {
-			x = 1
-			y = 2
-		}
-		else if (sender == buttonBottomRight) {
-			x = 2
-			y = 2
+		for i in buttons.indices {
+			if (sender == buttons[i]) {
+				x = i % 3;
+				y = i / 3;
+				break;
+			}
 		}
 		if (SubGame.typeAtPoint(x: x, y: y).type == .none) {
 			SubGame.turn(x: x, y: y)
